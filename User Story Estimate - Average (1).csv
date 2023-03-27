@@ -1,0 +1,11 @@
+Tasks,Hours
+template for seaching page,1
+create the search bar ,1.333333333
+create drop down for filter and mechanics,2.166666667
+choosing requirements (individual tickboxes for dietary restrictions... sliders for budget),2.166666667
+Appply button which alters stored information of user (preferences),3
+Search button,1.333333333
+create page template for search results,2.833333333
+display on recipe options which requirements (if any) are missing ,3.5
+create page for no search results found,1
+create display for how many search results found,1.833333333
