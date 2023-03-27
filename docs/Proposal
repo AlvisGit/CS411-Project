@@ -1,9 +1,9 @@
 Proposal 
 Our first Idea was to create an app that generates different menu options for 
 users based on which ingredients are already in the pantry. By inputting which 
-ingredients already owned, the user can be directed to Amazon Groceries to buy 
-the remaining ingredients. Additionally, the user will have the option to 
-change different portion sizes, where the app would calculate the newly updated
+ingredients already owned, the user can be directed to InstaCart to buy the 
+remaining ingredients. Additionally, the user will have the option to change 
+different portion sizes, where the app would calculate the newly updated 
 amount of each item required for the recipe based on the serving size. 
 
 The other idea was to create an app to generate a route to a destination while 
