@@ -1,0 +1,4 @@
+Users should be able to add recipes to their favorites and be able to access it again easily the next time they log in. The navigation bar should have a button to easily
+access the Favorites page for the user. Each recipe should have an option to be favorited/saved by the user. Each recipe that was favorited should be added to the user’s 
+‘Favorites’ page which will display every recipe saved. Other users should be able to see the favorites page in order to see which dishes someone enjoyed or plans on 
+making. If a user does not have any favorites saved, it should display a blank page saying ‘No favorites added yet’.
