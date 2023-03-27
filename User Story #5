@@ -1,0 +1,4 @@
+A user should be able to change the amount of servings desired. The app should calculate how much of each ingredient is required for each serving input.
+Then the price of the ingredients should be updated and displayed. They should also be able to see reviews from other users about whether the portions of
+the specific dish was filling or not filling enough based on the servings made and for how many people. Once the dish is made, the user should be able to
+add to the review whether the serving sizes were accurate or not, and if the dish was filling. 
