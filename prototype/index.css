@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: hsl(57, 53%, 93%);
+}
+
+.App {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+section {
+  margin: 0rem 0 1rem 0;
+}
+
+input {
+  text-align: center;
+  padding: 0.5rem;
+  margin-bottom: .5rem;
+}
+
+button {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: #000000;
+  color: #f3f3f3;
+  border: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #444f5c;
+  cursor: pointer;
+}
+
+img{
+  max-width: 50%;
+  max-height: 50%;
+}
+
+h1 {
+  font-size: 20px;
+}
+h5 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
