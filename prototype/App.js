@@ -2,7 +2,7 @@ import './App.css';
 import React, { useState } from "react";
 
 function App() {
-  const [recipeData, setrecipeData] = useState("");
+  const [recipeData, setrecipeData] = useState([]);
   const [ingredients, setIngredients] = useState("");
   const [numRecipes, setnumRecipes] = useState("");
 
