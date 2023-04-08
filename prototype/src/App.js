@@ -6,7 +6,7 @@ function App() {
   const [ingredients, setIngredients] = useState("");
   const [numRecipes, setnumRecipes] = useState("");
 
-  function handleChange(e) {
+  function handleIngredientsChange(e) {
     setIngredients(e.target.value);
   }
   function handleChangeNum(e) {
@@ -15,7 +15,7 @@ function App() {
 
   function getrecipeData() {
     fetch(
-      `https://api.spoonacular.com/recipes/findByIngredients?apiKey=a20214d2d06948209c5294fc65a0bcc8&ingredients=${ingredients}&number=${numRecipes}&ranking=1`
+      `http://localhost:8000/recipes?ingredients=${encodeURIComponent(ingredients)}&numRecipes=${numRecipes}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -33,7 +33,7 @@ function App() {
         <input
           type="text"
           placeholder="Search Ingredients"
-          onChange={handleChange}
+          onChange={handleIngredientsChange}
         />
         <input
           type="text"
