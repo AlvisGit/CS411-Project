@@ -1,12 +1,30 @@
 import './App.css';
 import React, { useState } from "react";
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+
+import { useAuthState } from 'react-firebase-hooks/auth';
+
+
+firebase.initializeApp({
+  apiKey: "AIzaSyCrJ8pX1hkCL2RuqwUYmc_jU5F_3Qj_I1Q",
+  authDomain: "cs411-recipe.firebaseapp.com",
+  projectId: "cs411-recipe",
+  storageBucket: "cs411-recipe.appspot.com",
+  messagingSenderId: "675123654750",
+  appId: "1:675123654750:web:e4fd3cc6b3ccef87df84cf",
+  measurementId: "G-W4135JVBHB"
+})
+
+const auth = firebase.auth();
 
 function App() {
+  const [user] = useAuthState(auth);
   const [recipeData, setrecipeData] = useState([]);
   const [ingredients, setIngredients] = useState("");
   const [numRecipes, setnumRecipes] = useState("");
 
-  function handleIngredientsChange(e) {
+  function handleIngredientsChange(e  ) {
     setIngredients(e.target.value);
   }
   function handleChangeNum(e) {
@@ -30,6 +48,8 @@ function App() {
   return (
     <div className="App">
       <section>
+        {user ? <SignOut /> : <SignIn />}
+        {console.log(user ? user.uid : "No user")}
         <input
           type="text"
           placeholder="Search Ingredients"
@@ -52,5 +72,24 @@ function App() {
     </div>
   );
 }
+
+function SignIn() {
+  const signInWithGoogle = () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider);
+    
+  }
+
+  return (
+    <button onClick={signInWithGoogle}>Sign in with Google</button>
+  )
+}
+
+function SignOut() {
+  return auth.currentUser && (
+    <button onClick={() => auth.signOut()}>Sign Out</button>
+  )
+}
+
 
 export default App;
