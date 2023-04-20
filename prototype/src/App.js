@@ -47,28 +47,38 @@ function App() {
 
   return (
     <div className="App">
-      <section>
-        {user ? <SignOut /> : <SignIn />}
-        {console.log(user ? user.uid : "No user")}
-        <input
-          type="text"
-          placeholder="Search Ingredients"
-          onChange={handleIngredientsChange}
-        />
-        <input
-          type="text"
-          placeholder="Number of Recipes"
-          onChange={handleChangeNum}
-        />
-        <button onClick={getrecipeData}>Get Recipes</button>
-      </section>
-      {recipeData.map(recipe => (
-        <div key={recipe.id}>
-          <h1>{recipe.title}</h1>
-          <img src={recipe.image}/>
-          <h5>Used Ingredients: {recipe.usedIngredientCount} Missing Ingredients: {recipe.missedIngredientCount}</h5>
-        </div>
-      ))}
+      {user ? (
+        <>
+          <section>
+            <input
+              type="text"
+              placeholder="Search Ingredients"
+              onChange={handleIngredientsChange}
+            />
+            <input
+              type="text"
+              placeholder="Number of Recipes"
+              onChange={handleChangeNum}
+            />
+            <button onClick={getrecipeData}>Get Recipes</button>
+          </section>
+          {recipeData.length > 0 && (
+            <section>
+              {recipeData.map(recipe => (
+                <div key={recipe.id}>
+                  <h1>{recipe.title}</h1>
+                  <img src={recipe.image}/>
+                  <h5>Used Ingredients: {recipe.usedIngredientCount} Missing Ingredients: {recipe.missedIngredientCount}</h5>
+                </div>
+              ))}
+            </section>
+          )}
+        </>
+      ) : (
+        <SignIn />
+      )}
+      {console.log(user ? user.uid : "No user")}
+      {user && <SignOut />}
     </div>
   );
 }
