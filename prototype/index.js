@@ -28,5 +28,22 @@ app.get('/recipes', (req,res) => {
 })
 
 
+app.get('/recipe', (req,res) => {
+    const recipeid = req.query.rid
+    const nutritionstate = req.query.nutrition
+    'recipe'
+
+      axios.get(`https://api.spoonacular.com/recipes/${recipeid}}/information?includeNutrition=${nutritionstate}&apiKey=${process.env.REACT_APP_API_KEY}`)
+        .then(response => {
+            res.json(response.data)
+            console.log(response.data)
+        })
+        .catch(error => {
+            console.log(error);
+        });
+})
+
+
+
 
 app.listen(PORT, () => console.log('Server running on PORT ' + PORT))
