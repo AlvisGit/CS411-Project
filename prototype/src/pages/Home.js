@@ -2,6 +2,7 @@ import React, {useState } from 'react'
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link } from 'react-router-dom';
 
 firebase.initializeApp({
     apiKey: "AIzaSyCrJ8pX1hkCL2RuqwUYmc_jU5F_3Qj_I1Q",
@@ -66,9 +67,12 @@ function Home() {
                     <h1>{recipe.title}</h1>
                     <img src={recipe.image}/>
                     <h5>Used Ingredients: {recipe.usedIngredientCount} Missing Ingredients: {recipe.missedIngredientCount}</h5>
+                    <Link to={`/recipe/${recipe.id}`}>
+                      <button>View Recipe</button>
+                    </Link>
                   </div>
                 ))}
-              </section>
+              </section>  
             )}
             <SignOut/>
       </div>
