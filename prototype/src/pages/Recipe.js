@@ -1,33 +1,37 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 function Recipe() {
-    const path = window.location.pathname;
-    const rid = path.split("/")[2];
-    const [recipeData, setrecipeData] = useState([]);
-    const nutrition = false;
+  const { rid } = useParams();
+  const [recipe, setRecipe] = useState(null);
+  useEffect(() => {
+    axios.get(`http://localhost:8000/api/recipes/${rid}`)
+      .then(response => {
+        setRecipe(response.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }, [rid]);
+  if (!recipe) {
+    return <div>Loading... Please wait</div>;
+  }
 
-    function getrecipeData() {
-        fetch(
-          `http://localhost:8000/recipe/recipeid=${rid}/nutrition=${nutrition}?`
-        )
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data)
-            setrecipeData(data);
-          })
-          .catch(() => {
-            console.log("error");
-          });
-      }
   return (
     <div>
-        <button onClick={getrecipeData}>Get Recipe</button>
-
-
-
-
+      <h1>{recipe.title}</h1>
+      <img src={recipe.image} alt={recipe.title} />
+      <h2>Ingredients:</h2>
+      <ul>
+        {recipe.extendedIngredients.map(ingredient => (
+          <li key={ingredient.id}>{ingredient.original}</li>
+        ))}
+      </ul>
+      <h2>Instructions:</h2>
+      <div dangerouslySetInnerHTML={{ __html: recipe.instructions }} />
     </div>
-  )
+  );
 }
 
-export default Recipe
+export default Recipe;
