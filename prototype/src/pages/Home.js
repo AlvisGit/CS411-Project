@@ -59,6 +59,10 @@ function Home() {
                 onChange={handleChangeNum}
               />
               <button onClick={getrecipeData}>Get Recipes</button>
+
+              <Link to={`/favorites`}>
+                      <button>View Favorites</button>
+              </Link>
             </section>
             {recipeData.length > 0 && (
               <section>
