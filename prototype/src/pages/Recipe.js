@@ -6,6 +6,7 @@ import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from "react-firebase-hooks/firestore";
+import { Link } from 'react-router-dom';
 
 firebase.initializeApp({
   apiKey: "AIzaSyCrJ8pX1hkCL2RuqwUYmc_jU5F_3Qj_I1Q",
@@ -92,6 +93,9 @@ function Recipe() {
 
   return (
     <div>
+       <Link to={`/`}>
+              <button>Home</button>
+      </Link>
       <h1>{recipe.title}</h1>
       <img src={recipe.image} alt={recipe.title} />
       <h2>Ingredients:</h2>
@@ -100,6 +104,12 @@ function Recipe() {
           <li key={ingredient.id}>{ingredient.original}</li>
         ))}
       </ul>
+      {user && (
+        <button onClick={handleFavorite}>
+          {favorited ? 'Unfavorite' : 'Favorite'}
+        </button>
+      )}
+
       <h2>Instructions:</h2>
       <div dangerouslySetInnerHTML={{ __html: recipe.instructions }} />
       {videoId && (
@@ -115,11 +125,7 @@ function Recipe() {
           />
         </div>
       )}
-      {user && (
-        <button onClick={handleFavorite}>
-          {favorited ? 'Unfavorite' : 'Favorite'}
-        </button>
-      )}
+      
     </div>
   );
 }

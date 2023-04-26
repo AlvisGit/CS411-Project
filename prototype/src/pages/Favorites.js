@@ -56,6 +56,9 @@ function Favorites() {
     <div>
       <h1>Your Favorites</h1>
       <ul>
+      <Link to={`/`}>
+            <button>Home</button>
+      </Link>
         {favorites.map(recipe => (
           <li key={recipe.id}>
             <h2>{recipe.title}</h2>
