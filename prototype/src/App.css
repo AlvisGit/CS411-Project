@@ -1,38 +1,165 @@
 .App {
+  font-family: "Roboto", sans-serif;
+  background-color: hsl(57, 53%, 93%);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.search-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.search-section input {
+  margin-right: 1rem;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.search-section button {
+  padding: 0.5rem 1rem;
+  background-color: #000000;
+  color: #f3f3f3;
+  border: none;
+  font-size: 1rem;
+}
+
+.search-section button:hover {
+  background-color: #444f5c;
+  cursor: pointer;
+}
+
+.recipe-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.recipe-section > div {
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-width: 30rem;
+  min-width: 20rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.recipe-section img {
+  max-width: 100%;
+  max-height: 15rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.recipe-section h1 {
+  margin-bottom: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.recipe-section h5 {
+  margin-top: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.recipe-section button {
+  margin-top: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.recipe-section > div {
+  position: relative;
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 30%;
+  text-align: center;
+}
+
+.recipe-section img {
+  max-width: 100%;
+  max-height: 15rem;
+  margin: 0 auto;
+}
+
+.recipe-section h1 {
+  margin-bottom: 1rem;
+}
+
+.recipe-section h5 {
+  margin-top: 1rem;
+}
+
+.recipe-section button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-top: 1rem;
+}
+
+.search-section button,
+.recipe-section button {
+  padding: 0.5rem 1rem;
+  background-color: #000000;
+  color: #f3f3f3;
+  border: none;
+  font-size: 1rem;
+  border-radius: 25px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.search-section button:hover,
+.recipe-section button:hover {
+  background-color: #444f5c;
+  cursor: pointer;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+.search-section input {
+  margin-right: 1rem;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 50px;
+}
+
+.search-section button {
+  padding: 0.5rem 1rem;
+  background-color: #000000;
+  color: #f3f3f3;
+  border: none;
+  font-size: 1rem;
+  border-radius: 50px;
+}
+
+.recipe-section button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-top: 1rem;
+  border-radius: 50%;
+}
+
+.signout-button {
+  border-radius: 50%;
+  width: 100px;
+  height: 50px;
+  font-size: 1rem;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+.signout-button:hover {
+  background-color: #444f5c;
 }
