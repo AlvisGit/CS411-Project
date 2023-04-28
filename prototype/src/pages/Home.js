@@ -3,20 +3,7 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
-
-firebase.initializeApp({
-    apiKey: "AIzaSyCrJ8pX1hkCL2RuqwUYmc_jU5F_3Qj_I1Q",
-    authDomain: "cs411-recipe.firebaseapp.com",
-    projectId: "cs411-recipe",
-    storageBucket: "cs411-recipe.appspot.com",
-    messagingSenderId: "675123654750",
-    appId: "1:675123654750:web:e4fd3cc6b3ccef87df84cf",
-    measurementId: "G-W4135JVBHB"
-  })
-  
-  const auth = firebase.auth();
-
-
+import { auth, firestore } from '../firebase';
 
 function Home() {
     const [user] = useAuthState(auth);
@@ -47,46 +34,48 @@ function Home() {
   
     return (
       <div className="App">
-            <section>
-              <input
-                type="text"
-                placeholder="Search Ingredients"
-                onChange={handleIngredientsChange}
-              />
-              <input
-                type="text"
-                placeholder="Number of Recipes"
-                onChange={handleChangeNum}
-              />
-              <button onClick={getrecipeData}>Get Recipes</button>
-
-              <Link to={`/favorites`}>
-                      <button>View Favorites</button>
-              </Link>
-            </section>
-            {recipeData.length > 0 && (
-              <section>
-                {recipeData.map(recipe => (
-                  <div key={recipe.id}>
-                    <h1>{recipe.title}</h1>
-                    <img src={recipe.image}/>
-                    <h5>Used Ingredients: {recipe.usedIngredientCount} Missing Ingredients: {recipe.missedIngredientCount}</h5>
-                    <Link to={`/recipe/${recipe.id}`}>
-                      <button>View Recipe</button>
-                    </Link>
-                  </div>
-                ))}
-              </section>  
-            )}
-            <SignOut/>
+        <header>
+          <h1>Cookible</h1>
+        </header>
+        <section className="search-section">
+          <input
+            type="text"
+            placeholder="Search Ingredients"
+            onChange={handleIngredientsChange}
+          />
+          <input
+            type="text"
+            placeholder="Number of Recipes"
+            onChange={handleChangeNum}
+          />
+          <button onClick={getrecipeData}>Get Recipes</button>
+    
+          <Link to={`/favorites`}>
+            <button>View Favorites</button>
+          </Link>
+        </section>
+        {recipeData.length > 0 && (
+          <section className="recipe-section">
+            {recipeData.map(recipe => (
+              <div key={recipe.id}>
+                <h1>{recipe.title}</h1>
+                <img src={recipe.image} alt={recipe.title} />
+                <h5>Used Ingredients: {recipe.usedIngredientCount} Missing Ingredients: {recipe.missedIngredientCount}</h5>
+                <Link to={`/recipe/${recipe.id}`}>
+                  <button>View Recipe</button>
+                </Link>
+              </div>
+            ))}
+          </section>
+        )}
+        <SignOut />
       </div>
     );
   }
 
-function SignOut() {
-    
+  function SignOut() {
     return auth.currentUser && (
-      <button onClick={() => auth.signOut()}>Sign Out</button>
+      <button className="signout-button" onClick={() => auth.signOut()}>Sign Out</button>
     )
   }
   

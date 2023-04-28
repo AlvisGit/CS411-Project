@@ -7,19 +7,7 @@ import 'firebase/compat/firestore';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import { Link } from 'react-router-dom';
-
-firebase.initializeApp({
-  apiKey: "AIzaSyCrJ8pX1hkCL2RuqwUYmc_jU5F_3Qj_I1Q",
-  authDomain: "cs411-recipe.firebaseapp.com",
-  projectId: "cs411-recipe",
-  storageBucket: "cs411-recipe.appspot.com",
-  messagingSenderId: "675123654750",
-  appId: "1:675123654750:web:e4fd3cc6b3ccef87df84cf",
-  measurementId: "G-W4135JVBHB"
-})
-
-const auth = firebase.auth();
-const firestore = firebase.firestore();
+import { auth, firestore } from '../firebase';
 
 function Recipe() {
   const { rid } = useParams();
