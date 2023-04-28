@@ -32,7 +32,7 @@ function Recipe() {
     axios.get(`http://localhost:8000/api/recipes/${rid}`)
       .then(response => {
         setRecipe(response.data);
-        axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${encodeURIComponent(response.data.title)}&key=AIzaSyDYj8nEVypQPyWGz9sXs12nAhUGDhwShGI`)
+        axios.get(`http://localhost:8000/recipes/youtube`)
           .then(response => {
             setVideoId(response.data.items[0].id.videoId);
           })
