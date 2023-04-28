@@ -32,7 +32,7 @@ function Recipe() {
     axios.get(`http://localhost:8000/api/recipes/${rid}`)
       .then(response => {
         setRecipe(response.data);
-        axios.get(`http://localhost:8000/recipes/youtube`)
+        axios.get(`http://localhost:8000/recipes/youtube/?q=${encodeURIComponent(response.data.title)}`)
           .then(response => {
             setVideoId(response.data.items[0].id.videoId);
           })

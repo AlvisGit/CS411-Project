@@ -40,15 +40,15 @@ app.get('/api/recipes/:rid', (req, res) => {
       });
   });
 
-app.get('/recipes/youtube', (req, res) => {
-  const passedSearch = req.params;
+app.get('/recipes/youtube/', (req, res) => {
+  const passedSearch = req.query.q;
   axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${encodeURIComponent(passedSearch)}&key=AIzaSyDYj8nEVypQPyWGz9sXs12nAhUGDhwShGI`)
   .then(response => {
-    res.send(response.data);
-  })
-  .catch(error => {
-    console.log(error);
+        res.send(response.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
   });
-});
 
 app.listen(PORT, () => console.log('Server running on PORT ' + PORT))
