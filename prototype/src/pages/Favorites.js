@@ -48,15 +48,17 @@ function Favorites() {
       <Link to={`/`}>
             <button>Home</button>
       </Link>
+      <section className="recipe-section">
         {favorites.map(recipe => (
-          <li key={recipe.id}>
-            <h2>{recipe.title}</h2>
+          <div key={recipe.id}>
+            <h1>{recipe.title}</h1>
             <img src={recipe.image} alt={recipe.title} />
             <Link to={`/recipe/${recipe.id}`}>
                       <button>View Recipe</button>
             </Link>
-          </li>
+          </div>
         ))}
+      </section>
       </ul>
     </div>
   );
