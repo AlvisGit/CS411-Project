@@ -12,20 +12,18 @@ app.get('/', (req,res) => {
     res.json('hi')
 })
 
-app.get('/recipes', (req,res) => {
-    const passedIngredients = req.query.ingredients
-    const passednumRecipes = req.query.numRecipes
-    'recipes'
+app.get('/search-results', (req, res) => {
+  const passedIngredients = req.query.ingredients;
+  const passedNumRecipes = req.query.numRecipes;
 
-      axios.get(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${process.env.REACT_APP_API_KEY}&ingredients=${passedIngredients}&number=${passednumRecipes}&ranking=1`)
-        .then(response => {
-            res.json(response.data)
-            console.log(response.data)
-        })
-        .catch(error => {
-            console.log(error);
-        });
-})
+  axios.get(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${process.env.REACT_APP_API_KEY}&ingredients=${passedIngredients}&number=${passedNumRecipes}&ranking=1`)
+    .then(response => {
+      res.json(response.data);
+    })
+    .catch(error => {
+      console.log(error);
+    });
+});
 
 
 app.get('/api/recipes/:rid', (req, res) => {
