@@ -7,7 +7,7 @@ import 'firebase/compat/firestore';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import { Link } from 'react-router-dom';
-import { auth, firestore } from '../firebase';
+import { auth, firestore } from '../utils/firebase';
 
 function Recipe() {
   const { rid } = useParams();
@@ -23,6 +23,7 @@ function Recipe() {
         axios.get(`http://localhost:8000/recipes/youtube/?q=${encodeURIComponent(response.data.title)}`)
           .then(response => {
             setVideoId(response.data.items[0].id.videoId);
+            console.log(videoId)
           })
           .catch(error => {
             console.log(error);

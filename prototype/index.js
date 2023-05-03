@@ -40,7 +40,8 @@ app.get('/api/recipes/:rid', (req, res) => {
 
 app.get('/recipes/youtube/', (req, res) => {
   const passedSearch = req.query.q;
-  axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${encodeURIComponent(passedSearch)}&key=AIzaSyDYj8nEVypQPyWGz9sXs12nAhUGDhwShGI`)
+  console.log(passedSearch);
+  axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${encodeURIComponent(passedSearch)}&key=${process.env.REACT_APP_YOUTUBE_API_KEY}}`)
   .then(response => {
         res.send(response.data);
       })

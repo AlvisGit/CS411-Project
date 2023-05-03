@@ -3,7 +3,7 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
-import { auth, firestore } from '../firebase';
+import { auth, firestore } from '../utils/firebase';
 
 
 function Home() {

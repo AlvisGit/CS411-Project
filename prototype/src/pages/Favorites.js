@@ -5,7 +5,7 @@ import 'firebase/compat/firestore';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { Link } from 'react-router-dom';
-import { auth, firestore } from '../firebase';
+import { auth, firestore } from '../utils/firebase';
 
 
 function Favorites() {
