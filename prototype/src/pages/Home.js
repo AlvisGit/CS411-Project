@@ -10,12 +10,16 @@ function Home() {
     const [user] = useAuthState(auth);
     const [ingredients, setIngredients] = useState("");
     const [numRecipes, setnumRecipes] = useState("");
-  
+    
     function handleIngredientsChange(e  ) {
       setIngredients(e.target.value);
     }
     function handleChangeNum(e) {
       setnumRecipes(e.target.value);
+    }
+
+    function handleDisabledClick() {
+      alert('Please enter ingredients and number of recipes');
     }
   
     return (
@@ -34,11 +38,17 @@ function Home() {
             placeholder="Number of Recipes"
             onChange={handleChangeNum}
           />
-          <Link to={`/search-results/${encodeURIComponent(ingredients)}/${numRecipes}`}>
-            <button>Get Recipes</button>
-          </Link>
+          {numRecipes && ingredients ? (
+            <Link to={`/search-results/${encodeURIComponent(ingredients)}/${numRecipes}`}>
+              <button>Get Recipes</button>
+            </Link>
+          ) : (
+            <div>
+              <button onClick={handleDisabledClick}>Get Recipes</button>
+            </div>
+          )}
           <Link to={`/favorites`}>
-            <button>View Favorites</button>
+            <button>View Favorites</button> 
           </Link>
         </section>
         <SignOut />
