@@ -7,6 +7,6 @@
 ## How To Run
 - First clone or donwload the repository
 - Fill variables in env template
-- Open a terminal and instal dependencies with "npm install"
-- Start backend with "npm run start:backend"
-- Start frontend with "npm run start:frontend"
+- Open a terminal and instal dependencies with 'npm install'
+- Start backend with 'npm run start:backend'
+- Start frontend with 'npm run start:frontend'
