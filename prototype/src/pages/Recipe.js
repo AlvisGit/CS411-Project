@@ -82,9 +82,17 @@ function Recipe() {
 
   return (
     <div>
+      <div className="button-row">
        <Link to={`/`}>
-              <button>Home</button>
+              <button className="recipeinfo-button">Home</button>
       </Link>
+      <div style={{ width: "10px" }}></div>
+      {user && (
+        <button onClick={handleFavorite} button className="recipeinfo-button">
+          {favorited ? 'Unfavorite' : 'Favorite'}
+        </button>
+      )}
+      </div>
       <h1>{recipe.title}</h1>
       <img src={recipe.image} alt={recipe.title} />
       <h2>Ingredients:</h2>
@@ -93,11 +101,6 @@ function Recipe() {
           <li key={ingredient.id}>{ingredient.original}</li>
         ))}
       </ul>
-      {user && (
-        <button onClick={handleFavorite} className='home-button'>
-          {favorited ? 'Unfavorite' : 'Favorite'}
-        </button>
-      )}
 
       <h2>Instructions:</h2>
       <div dangerouslySetInnerHTML={{ __html: recipe.instructions }} />

@@ -52,7 +52,7 @@ function Favorites() {
     <div className="favorites">
       <h1 className="favorites-title">Your Favorites</h1>
       <Link to={`/`}>
-        <button>Home</button>
+        <button className="new-button">Home</button>
       </Link>
       <section className="recipe-section">
         {favorites.map(recipe => (

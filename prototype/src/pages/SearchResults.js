@@ -25,11 +25,11 @@ function SearchResults() {
     <div>
       <div className="button-row">
         <Link to={`/`}>
-          <button className="home-button">Home</button>
+          <button className="new-button">Home</button>
         </Link>
         <div style={{ width: "20px" }}></div>
         <Link to={`/favorites`}>
-          <button className="home-button">View Favorites</button>
+          <button className="new-button">View Favorites</button>
         </Link>
       </div>
       {resultsLoaded && recipeData.length === 0 ? (
@@ -45,7 +45,7 @@ function SearchResults() {
                 Ingredients: {recipe.missedIngredientCount}
               </h5>
               <Link to={`/recipe/${recipe.id}`}>
-                <button>View Recipe</button>
+                <button className="new-button">View Recipe</button>
               </Link>
             </div>
           ))}

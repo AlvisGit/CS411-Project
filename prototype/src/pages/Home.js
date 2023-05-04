@@ -25,7 +25,7 @@ function Home() {
     return (
       <div className="App">
         <header>
-          <h1>Cookible</h1>
+          <home-title>Cookible</home-title>
         </header>
         <section className="search-section">
           <input
