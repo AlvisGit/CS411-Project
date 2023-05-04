@@ -2,4 +2,5 @@ I decided to use React for our frontend and Node for our backend for the prototy
 technologies in order to create this prototype. Since React and Node are some of the most popular technologies used for web development, I decided to use these two. The 
 reason for this is because there are plenty of tutorials and guides available for React and Node, which would help us learn these technologies better. On top of this, 
 they both use Javascript, so we can focus on learning a single language instead of learning two different programming languages. Furthermore, Node has useful frameworks 
-and libraries that are suitable for our project, like Express.js and Axios.js.
+and libraries that are suitable for our project, like Express.js and Axios.js. For our authentication and database, we used Firebase because we could implement 
+both authentication and a database with it, so we did not have to learn more technology like MongoDB.
