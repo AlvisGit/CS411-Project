@@ -11,7 +11,7 @@
 - Start backend with 'npm run start:backend'
 - Start frontend with 'npm run start:frontend'
 
-##Possible Errors
+## Possible Errors
 - Check if database and project are connecting. Can be fixed by replacing database rules with '
 rules_version = '2';
 service cloud.firestore {
