@@ -163,3 +163,70 @@ h1 {
 .signout-button:hover {
   background-color: #444f5c;
 }
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.login-title {
+  font-size: 8rem;
+  margin-bottom: 5rem;
+  color: navy;
+}
+
+.login-button {
+  padding: 1rem 2rem;
+  background-color: #000000;
+  color: #f3f3f3;
+  border: none;
+  font-size: 1.5rem;
+  border-radius: 25px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+  
+}
+
+.login-button:hover {
+  background-color: #444f5c;
+  cursor: pointer;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+
+.favorites {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.favorites-title {
+  font-size: 2.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.home-button {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.home-button button {
+  background-color: black;
+  color: white;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.home-button button:hover {
+  background-color: white;
+  color: black;
+
+}

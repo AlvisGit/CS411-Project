@@ -14,23 +14,18 @@ function Login() {
             navigate('/');
         }
     }, [user, navigate]);
-  return (
-    <div><SignIn/></div>
-  )
-}
 
-function SignIn() {
     const signInWithGoogle = () => {
       const provider = new firebase.auth.GoogleAuthProvider();
       auth.signInWithPopup(provider);
-      
     }
-  
-    return (
-      <button onClick={signInWithGoogle}>Sign in with Google</button>
-    )
-  }
-  
 
+    return (
+      <div className="login-container">
+        <h1 className="login-title">Cookible</h1>
+        <button className="login-button" onClick={signInWithGoogle}>Sign in with Google</button>
+      </div>
+    )
+}
 
 export default Login
