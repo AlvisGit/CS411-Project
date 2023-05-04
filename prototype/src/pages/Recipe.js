@@ -94,7 +94,7 @@ function Recipe() {
         ))}
       </ul>
       {user && (
-        <button onClick={handleFavorite}>
+        <button onClick={handleFavorite} className='home-button'>
           {favorited ? 'Unfavorite' : 'Favorite'}
         </button>
       )}

@@ -230,3 +230,9 @@ h1 {
   color: black;
 
 }
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}

@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 function SearchResults() {
   const { ingredients, numRecipes } = useParams()
   const [recipeData, setRecipeData] = useState([]);
+  const [resultsLoaded, setResultsLoaded] = useState(false);
 
   useEffect(() => {
       fetch(
@@ -13,6 +14,7 @@ function SearchResults() {
         .then((data) => {
           console.log("test seach");
           setRecipeData(data);
+          setResultsLoaded(true);
         })
         .catch(() => {
           console.log("error");
@@ -21,13 +23,18 @@ function SearchResults() {
 
   return (
     <div>
-    <Link to={`/`}>
-        <button>Home</button>
-    </Link>
-    <Link to={`/favorites`}>
-        <button>View Favorites</button>
-    </Link>
-      {recipeData.length > 0 ? (
+      <div className="button-row">
+        <Link to={`/`}>
+          <button className="home-button">Home</button>
+        </Link>
+        <div style={{ width: "20px" }}></div>
+        <Link to={`/favorites`}>
+          <button className="home-button">View Favorites</button>
+        </Link>
+      </div>
+      {resultsLoaded && recipeData.length === 0 ? (
+        <div>No Results Found</div>
+      ) : (
         <section className="recipe-section">
           {recipeData.map((recipe) => (
             <div key={recipe.id}>
@@ -43,8 +50,6 @@ function SearchResults() {
             </div>
           ))}
         </section>
-      ) : (
-        <div>No Results Found</div>
       )}
     </div>
   );

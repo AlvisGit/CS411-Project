@@ -10,6 +10,7 @@ import { auth, firestore } from '../utils/firebase';
 function Favorites() {
   const [user] = useAuthState(auth);
   const [favorites, setFavorites] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (user) {
@@ -25,15 +26,22 @@ function Favorites() {
             }
             setFavorites(favorites);
             console.log(favorites);
-          }})
+          }
+          setIsLoading(false);
+        })
         .catch(error => {
           console.log(error);
+          setIsLoading(false);
         });
     }
   }, [user]);
 
   if (!user) {
     return <div>You need to sign in to view your favorites.</div>;
+  }
+
+  if (isLoading) {
+    return <div>Loading...</div>;
   }
 
   if (favorites.length === 0) {
@@ -43,7 +51,7 @@ function Favorites() {
   return (
     <div className="favorites">
       <h1 className="favorites-title">Your Favorites</h1>
-      <Link to={`/`} className="home-button">
+      <Link to={`/`}>
         <button>Home</button>
       </Link>
       <section className="recipe-section">
