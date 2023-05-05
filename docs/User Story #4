@@ -1,5 +1,9 @@
-A user should be able to leave a review/rating of the recipe commenting their thoughts (e.g. A recipe had a lot of sugar, and the user thought it turned out too sweet, 
-so they can leave a review so future users will see). Users should also be able to go look under the reviews tab and read the reviews of other users. They should also 
-have the ability to agree/disagree with a review. Users should also have an option to upload images of their dish. Each review should have a time stamp to indicate when
-the review was left. If there are no reviews for a recipe, it should just say “No reviews yet.” A user should also be able to sort the reviews by highest to lowest rating,
-most agreed, or most recent. 
+The website should have a personalized feature that allows users to save 
+their favorite recipes. If a user finds a recipe they like, they should 
+be able to favorite it and access it easily later on. Once the user has 
+added recipes to their favorites, they should be able to quickly access 
+the recipes saved on the favorites page. Additionally, the user should be 
+able to easily access the information page regarding the recipe from the 
+favorites page by clicking on the item. This feature will help users keep 
+track of their favorite recipes and easily access them whenever they want 
+to make the dish.
