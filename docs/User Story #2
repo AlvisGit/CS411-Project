@@ -1,5 +1,8 @@
-Users should be able to input dietary restrictions and preferences to receive recipes that are most suited to them. Such preferences should include budget, allergies, 
-intolerances, required ingredients, cuisine, and more. Users can use these to filter out unwanted recipes. From the search results displayed, if there were missing 
-requirements from the filter, the recipe should display which of the requirements have not been met, such as if there were allergens in the recipe but it matched every 
-other filter requirement. The search results should be displayed in order of how many requirements were met, and if none were met, the user should see a page that says 
-“No search results found”.
+The website should have a user-friendly search feature that allows users to input specific 
+ingredients they wish to use in a recipe. Upon entering the ingredients in the search bar, 
+the user should be able to click the search button and view a list of different recipes 
+that contain the input ingredient(s). Additionally, the user should be able to see how many 
+ingredients they are missing that are necessary for the recipe. The user should also have 
+the option to choose how many different recipes they want to be displayed when searching. 
+This feature will help users find relevant recipes based on their preferences and 
+ingredients on hand.
