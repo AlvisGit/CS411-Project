@@ -1,10 +1,11 @@
 Proposal 
 Our first Idea was to create an app that generates different menu options for 
 users based on which ingredients are already in the pantry. By inputting which 
-ingredients already owned, the user can be directed to InstaCart to buy the 
-remaining ingredients. Additionally, the user will have the option to change 
-different portion sizes, where the app would calculate the newly updated 
-amount of each item required for the recipe based on the serving size. 
+ingredients are already owned, the user will be shown multiple recipes that use
+the ingredients that they inputted and show how many ingredients are missing. 
+The user can then view a recipe to see the ingredients and instructions. 
+They will also be shown a YouTube video that shows how to cook the recipe.
+
 
 The other idea was to create an app to generate a route to a destination while 
 utilizing the crime statistics of that certain area. If the user’s shortest path 
