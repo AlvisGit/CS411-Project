@@ -1,4 +1,7 @@
-Users should be able to add recipes to their favorites and be able to access it again easily the next time they log in. The navigation bar should have a button to easily
-access the Favorites page for the user. Each recipe should have an option to be favorited/saved by the user. Each recipe that was favorited should be added to the user’s 
-‘Favorites’ page which will display every recipe saved. Other users should be able to see the favorites page in order to see which dishes someone enjoyed or plans on 
-making. If a user does not have any favorites saved, it should display a blank page saying ‘No favorites added yet’.
+The website should have a seamless user experience that allows users to easily 
+navigate between different pages. For example, when a user clicks a specific 
+recipe from the search results page, they should be able to expand the item and 
+read more about it. If the user wants to go back to the search results page, 
+they should be able to do so by clicking the back button without having to 
+re-input the search criteria. This feature will help users save time and effort 
+when searching for recipes and exploring the website's different features.
