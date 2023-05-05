@@ -1,4 +1,5 @@
-A user should be able to log in to review previously bought ingredients. Once logged in there should be a previously ordered button directing the user to their previous 
-orders. On this page, they should be able to have an overview of all their orders including the total spent over a given period of time. The user should also be able to 
-place the ingredients of a recent order back into their cart with a click of a button. Then they should be able to edit their cart or place an order on the given grocery
-marketplace. This allows the user to have a much more efficient process for similar orders.
+The website should have a secure login feature that ensures only authorized users can access the website's features. 
+Upon entering the website, the user should be presented with a login page where they can sign in with their Google 
+account. Before entering any information, the user should only be able to view the login page and no other information. 
+Once the user has successfully logged in, they should be able to fully access the website's features, such as 
+searching for recipes, viewing tutorials, and saving their favorite recipes.
