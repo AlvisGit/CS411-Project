@@ -23,3 +23,6 @@ service cloud.firestore {
 }
 '
 - Favorites collection needed in database
+
+## Demonstration
+https://www.youtube.com/watch?v=TOxwlQwjPxg
